@@ -24,7 +24,7 @@ public class TransactionResource {
     @GetMapping(value = "/{id}")
     public ResponseEntity<Optional<Transaction>> findById(@PathVariable Long id) {
        Optional<Transaction> obj = service.findById(id);
-        return ResponseEntity.ok().body(obj);
+        return new ResponseEntity<>(obj ,HttpStatus.OK);
     }
 
     @PostMapping
